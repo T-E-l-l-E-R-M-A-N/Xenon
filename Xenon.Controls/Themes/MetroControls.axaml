@@ -1,0 +1,521 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Xenon.Controls">
+    <ControlTheme x:Key="{x:Type controls:MetroProgressBar}"
+                  TargetType="controls:MetroProgressBar">
+        <Setter Property="Background" Value="#1FFFFFFF" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Maximum" Value="100" />
+        <Setter Property="MinHeight" Value="6" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <LayoutTransformControl x:Name="PART_LayoutTransformHost">
+                    <Grid x:Name="ContainingGrid">
+                        <Grid x:Name="EllipseClip"
+                              ClipToBounds="True"
+                              IsHitTestVisible="False"
+                              IsVisible="False"
+                              Opacity="0">
+                            <Grid x:Name="EllipseGrid"
+                                  Opacity="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RenderTransform>
+                                    <TranslateTransform />
+                                </Grid.RenderTransform>
+
+                                <Border x:Name="B1"
+                                        Grid.Column="8"
+                                        RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform />
+                                    </Border.RenderTransform>
+                                    <Ellipse x:Name="E1"
+                                             Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Fill="{TemplateBinding Foreground}"
+                                             Opacity="0"
+                                             RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                        <Ellipse.RenderTransform>
+                                            <TranslateTransform />
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Border>
+                                <Rectangle Grid.Column="7"
+                                           Width="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                <Border x:Name="B2"
+                                        Grid.Column="6"
+                                        RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform />
+                                    </Border.RenderTransform>
+                                    <Ellipse x:Name="E2"
+                                             Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Fill="{TemplateBinding Foreground}"
+                                             Opacity="0"
+                                             RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                        <Ellipse.RenderTransform>
+                                            <TranslateTransform />
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Border>
+                                <Rectangle Grid.Column="5"
+                                           Width="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                <Border x:Name="B3"
+                                        Grid.Column="4"
+                                        RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform />
+                                    </Border.RenderTransform>
+                                    <Ellipse x:Name="E3"
+                                             Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Fill="{TemplateBinding Foreground}"
+                                             Opacity="0"
+                                             RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                        <Ellipse.RenderTransform>
+                                            <TranslateTransform />
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Border>
+                                <Rectangle Grid.Column="3"
+                                           Width="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                <Border x:Name="B4"
+                                        Grid.Column="2"
+                                        RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform />
+                                    </Border.RenderTransform>
+                                    <Ellipse x:Name="E4"
+                                             Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Fill="{TemplateBinding Foreground}"
+                                             Opacity="0"
+                                             RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                        <Ellipse.RenderTransform>
+                                            <TranslateTransform />
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Border>
+                                <Rectangle Grid.Column="1"
+                                           Width="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                <Border x:Name="B5"
+                                        Grid.Column="0"
+                                        RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                    <Border.RenderTransform>
+                                        <TranslateTransform />
+                                    </Border.RenderTransform>
+                                    <Ellipse x:Name="E5"
+                                             Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                             Fill="{TemplateBinding Foreground}"
+                                             Opacity="0"
+                                             RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                        <Ellipse.RenderTransform>
+                                            <TranslateTransform />
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                        <Grid x:Name="DeterminateRoot"
+                              Margin="{TemplateBinding Padding}">
+                            <Border x:Name="PART_Track"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}" />
+                            <Border x:Name="PART_Indicator"
+                                    HorizontalAlignment="Left"
+                                    Background="{TemplateBinding Foreground}" />
+                            <TextBlock Margin="8,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       IsHitTestVisible="False"
+                                       IsVisible="{TemplateBinding ShowProgressText}"
+                                       Text="{Binding FormattedProgressText, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Grid>
+                    </Grid>
+                </LayoutTransformControl>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:ProgressRing}"
+                  TargetType="controls:ProgressRing">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="MinWidth" Value="20" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid x:Name="Ring"
+                          Margin="{TemplateBinding Padding}"
+                          Background="Transparent"
+                          FlowDirection="LeftToRight"
+                          IsVisible="False"
+                          MaxHeight="{Binding MaxSideLength, RelativeSource={RelativeSource TemplatedParent}}"
+                          MaxWidth="{Binding MaxSideLength, RelativeSource={RelativeSource TemplatedParent}}"
+                          RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                        <Canvas x:Name="C1"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas.RenderTransform>
+                                <RotateTransform />
+                            </Canvas.RenderTransform>
+                            <Ellipse x:Name="E1"
+                                     Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Fill="{TemplateBinding Foreground}"
+                                     HorizontalAlignment="Left"
+                                     Opacity="0"
+                                     VerticalAlignment="Top" />
+                        </Canvas>
+
+                        <Canvas x:Name="C2"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas.RenderTransform>
+                                <RotateTransform />
+                            </Canvas.RenderTransform>
+                            <Ellipse x:Name="E2"
+                                     Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Fill="{TemplateBinding Foreground}"
+                                     HorizontalAlignment="Left"
+                                     Opacity="0"
+                                     VerticalAlignment="Top" />
+                        </Canvas>
+
+                        <Canvas x:Name="C3"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas.RenderTransform>
+                                <RotateTransform />
+                            </Canvas.RenderTransform>
+                            <Ellipse x:Name="E3"
+                                     Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Fill="{TemplateBinding Foreground}"
+                                     HorizontalAlignment="Left"
+                                     Opacity="0"
+                                     VerticalAlignment="Top" />
+                        </Canvas>
+
+                        <Canvas x:Name="C4"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas.RenderTransform>
+                                <RotateTransform />
+                            </Canvas.RenderTransform>
+                            <Ellipse x:Name="E4"
+                                     Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Fill="{TemplateBinding Foreground}"
+                                     HorizontalAlignment="Left"
+                                     Opacity="0"
+                                     VerticalAlignment="Top" />
+                        </Canvas>
+
+                        <Canvas x:Name="C5"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas.RenderTransform>
+                                <RotateTransform />
+                            </Canvas.RenderTransform>
+                            <Ellipse x:Name="E5"
+                                     Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                     Fill="{TemplateBinding Foreground}"
+                                     HorizontalAlignment="Left"
+                                     Opacity="0"
+                                     VerticalAlignment="Top" />
+                        </Canvas>
+
+                        <Canvas x:Name="SixthCircle"
+                                IsVisible="False"
+                                RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                            <Canvas x:Name="C6"
+                                    RenderTransformOrigin="{x:Static RelativePoint.Center}">
+                                <Canvas.RenderTransform>
+                                    <RotateTransform />
+                                </Canvas.RenderTransform>
+                                <Ellipse x:Name="E6"
+                                         Width="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                         Height="{Binding EllipseDiameter, RelativeSource={RelativeSource TemplatedParent}}"
+                                         Margin="{Binding EllipseOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                         Fill="{TemplateBinding Foreground}"
+                                         HorizontalAlignment="Left"
+                                         Opacity="0"
+                                         VerticalAlignment="Top" />
+                            </Canvas>
+                        </Canvas>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:PanoramaItem}"
+                  TargetType="controls:PanoramaItem">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel LastChildFill="True"
+                           VerticalSpacing="10">
+                    <ContentPresenter DockPanel.Dock="Top"
+                                      Content="{TemplateBinding Header}"
+                                      ContentTemplate="{TemplateBinding HeaderTemplate}" />
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:Panorama}"
+                  TargetType="controls:Panorama">
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left" />
+            </ItemsPanelTemplate>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ClipToBounds="{TemplateBinding ClipToBounds}">
+                    <Grid ClipToBounds="True"
+                          IsHitTestVisible="False">
+                        <Grid.OpacityMask>
+                            <LinearGradientBrush StartPoint="0% 0%"
+                                                 EndPoint="0% 100%">
+                                <GradientStop Offset="0.0" Color="Transparent"/>
+                                <GradientStop Offset="0.08" Color="Black"/>
+                                <GradientStop Offset="0.9" Color="Black"/>
+                                <GradientStop Offset="1.0" Color="Transparent"/>
+                            </LinearGradientBrush>
+                        </Grid.OpacityMask>
+                        <Rectangle x:Name="PART_BackgroundPresenter"
+                                   HorizontalAlignment="Left"
+                                   Fill="{TemplateBinding Background}"
+                                   Opacity="1">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform>
+                                    <TranslateTransform.Transitions>
+                                        <Transitions>
+                                            <DoubleTransition Property="X"
+                                                              Easing="CubicEaseOut"
+                                                              Duration="0:0:0.8" />
+                                        </Transitions>
+                                    </TranslateTransform.Transitions>
+                                </TranslateTransform>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Rectangle x:Name="PART_BackgroundClonePresenter"
+                                   HorizontalAlignment="Left"
+                                   Fill="{TemplateBinding Background}"
+                                   Opacity="0">
+                            <Rectangle.RenderTransform>
+                                <TranslateTransform>
+                                    <TranslateTransform.Transitions>
+                                        <Transitions>
+                                            <DoubleTransition Property="X"
+                                                              Easing="CubicEaseOut"
+                                                              Duration="0:0:0.8" />
+                                        </Transitions>
+                                    </TranslateTransform.Transitions>
+                                </TranslateTransform>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </Grid>
+                    <DockPanel LastChildFill="True"
+                               VerticalSpacing="20">
+                        <Border Height="120"
+                                DockPanel.Dock="Top">
+                            <Grid ClipToBounds="False">
+                                <ContentPresenter x:Name="PART_TitlePresenter"
+                                                  HorizontalAlignment="Left"
+                                                  Margin="0,-30,0,-30"
+                                                  Content="{TemplateBinding Title}"
+                                                  ContentTemplate="{TemplateBinding TitleTemplate}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform>
+                                            <TranslateTransform.Transitions>
+                                                <Transitions>
+                                                    <DoubleTransition Property="X"
+                                                                      Easing="CubicEaseOut"
+                                                                      Duration="0:0:0.8" />
+                                                </Transitions>
+                                            </TranslateTransform.Transitions>
+                                        </TranslateTransform>
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter x:Name="PART_TitleClonePresenter"
+                                                  HorizontalAlignment="Left"
+                                                  Margin="0,-30,0,-30"
+                                                  IsHitTestVisible="False"
+                                                  Opacity="0">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform>
+                                            <TranslateTransform.Transitions>
+                                                <Transitions>
+                                                    <DoubleTransition Property="X"
+                                                                      Easing="CubicEaseOut"
+                                                                      Duration="0:0:0.8" />
+                                                </Transitions>
+                                            </TranslateTransform.Transitions>
+                                        </TranslateTransform>
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="PART_Viewport"
+                                Margin="{TemplateBinding Padding}"
+                                Background="Transparent">
+                            <ItemsPresenter />
+                        </Border>
+                    </DockPanel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:PivotItem}"
+                  TargetType="controls:PivotItem">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:Pivot}"
+                  TargetType="controls:Pivot">
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left" />
+            </ItemsPanelTemplate>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ClipToBounds="True">
+                    <Border Background="{TemplateBinding Background}" />
+                    <DockPanel LastChildFill="True"
+                               VerticalSpacing="18">
+                        <ContentPresenter DockPanel.Dock="Top"
+                                          Content="{TemplateBinding Title}"
+                                          ContentTemplate="{TemplateBinding TitleTemplate}" />
+                        <DockPanel LastChildFill="True"
+                                   Margin="{TemplateBinding Padding}">
+                            <Border DockPanel.Dock="Top"
+                                    Background="Transparent"
+                                    ClipToBounds="True">
+                                <StackPanel x:Name="PART_HeaderPanel"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                                    <StackPanel.RenderTransform>
+                                        <TranslateTransform>
+                                            <TranslateTransform.Transitions>
+                                                <Transitions>
+                                                    <DoubleTransition Property="X"
+                                                                      Easing="CubicEaseOut"
+                                                                      Duration="0:0:0.6" />
+                                                </Transitions>
+                                            </TranslateTransform.Transitions>
+                                        </TranslateTransform>
+                                    </StackPanel.RenderTransform>
+                                </StackPanel>
+                            </Border>
+                            <Border x:Name="PART_Viewport"
+                                    
+                                    Background="Transparent"
+                                    ClipToBounds="True">
+                                <ItemsPresenter />
+                            </Border>
+                        </DockPanel>
+                    </DockPanel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:PanoramaPivotItem}"
+                  TargetType="controls:PanoramaPivotItem">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter Content="{TemplateBinding Content}"
+                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:PanoramaPivot}"
+                  TargetType="controls:PanoramaPivot">
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left" />
+            </ItemsPanelTemplate>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ClipToBounds="True">
+                    <Border Background="{TemplateBinding Background}" />
+                    <DockPanel LastChildFill="True"
+                               Margin="{TemplateBinding Padding}"
+                               VerticalSpacing="18">
+                        <Border DockPanel.Dock="Top"
+                                Background="Transparent"
+                                ClipToBounds="True">
+                            <StackPanel x:Name="PART_HeaderPanel"
+                                        Orientation="Horizontal"
+                                        HorizontalAlignment="Left">
+                                <StackPanel.RenderTransform>
+                                    <TranslateTransform>
+                                        <TranslateTransform.Transitions>
+                                            <Transitions>
+                                                <DoubleTransition Property="X"
+                                                                  Easing="CubicEaseOut"
+                                                                  Duration="0:0:0.6" />
+                                            </Transitions>
+                                        </TranslateTransform.Transitions>
+                                    </TranslateTransform>
+                                </StackPanel.RenderTransform>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="PART_Viewport"
+                                Background="Transparent"
+                                ClipToBounds="True">
+                            <ItemsPresenter />
+                        </Border>
+                    </DockPanel>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

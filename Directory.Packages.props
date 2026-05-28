@@ -1,0 +1,42 @@
+<Project>
+  <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Avalonia packages -->
+    <!-- Important: keep version in sync! -->
+    <PackageVersion Include="AngleSharp" Version="1.3.0" />
+    <PackageVersion Include="AsyncImageLoader.Avalonia" Version="3.3.0" />
+    <PackageVersion Include="Autofac" Version="8.4.0" />
+    <PackageVersion Include="Avalonia" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Desktop" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.iOS" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Browser" Version="11.3.4" />
+    <PackageVersion Include="Avalonia.Android" Version="11.3.4" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageVersion Include="LibVLCSharp" Version="3.9.4" />
+    <PackageVersion Include="LiteDB" Version="4.1.2" />
+    <PackageVersion Include="MediaPlayer.Avalonia.Bass" Version="2.0.0" />
+    <PackageVersion Include="Microsoft.Maui.Core" Version="9.0.100" />
+    <PackageVersion Include="NetCoreAudio" Version="2.0.0" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="Plugin.LocalNotification" Version="12.0.2" />
+    <PackageVersion Include="Plugin.MediaManager" Version="1.2.2" />
+    <PackageVersion Include="Plugin.PushNotification" Version="3.6.23" />
+    <PackageVersion Include="Projektanker.Icons.Avalonia.MaterialDesign" Version="9.6.2" />
+    <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.11" />
+    <PackageVersion Include="TagLibSharp" Version="2.3.0" />
+    <PackageVersion Include="ValueConverters.Avalonia" Version="3.1.22" />
+    <PackageVersion Include="VideoLAN.LibVLC.iOS" Version="3.6.1" />
+    <PackageVersion Include="VkNet.AudioBypassService" Version="1.7.7" />
+    <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.15" />
+    <PackageVersion Include="Xaml.Behaviors.Avalonia" Version="11.3.2" />
+    <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
+    <PackageVersion Include="YouTubeApiSharp" Version="0.0.5" />
+  </ItemGroup>
+</Project>

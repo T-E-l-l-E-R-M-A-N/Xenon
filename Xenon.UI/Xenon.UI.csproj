@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="../Xenon.Core/Xenon.Core.csproj"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Views\Flyouts\" />
+    </ItemGroup>
+
+</Project>

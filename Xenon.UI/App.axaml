@@ -1,0 +1,234 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="http://schemas.superdev.ch/valueconverters/2016/xaml"
+             xmlns:avalonia="https://github.com/projektanker/icons.avalonia"
+             xmlns:viewModels="clr-namespace:Xenon.Core.ViewModels;assembly=Xenon.Core"
+             xmlns:ui="clr-namespace:Xenon.UI"
+             xmlns:helpers="clr-namespace:Xenon.UI.Helpers"
+             x:Class="Xenon.UI.App"
+             RequestedThemeVariant="Default">
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <helpers:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+
+
+        <Style Selector="ScrollBar:horizontal /template/ Button">
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          Padding="0" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="DimGray" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style Selector="^:pressed">
+                <Setter Property="RenderTransform" Value="{x:Null}" />
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style Selector="^:disabled">
+                <Setter Property="RenderTransform" Value="{x:Null}" />
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Foreground" Value="Gray" />
+            </Style>
+        </Style>
+        <Style Selector="ScrollBar:horizontal[IsExpanded=False] /template/ Button">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="ScrollBar:horizontal[IsExpanded=False]">
+            <Setter Property="Height" Value="10" />
+            <Setter Property="MinHeight" Value="10" />
+        </Style>
+        <Style Selector="ScrollBar:horizontal /template/ RepeatButton">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="ScrollBar:horizontal[IsExpanded=False]">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="ScrollBar:horizontal[IsExpanded=True]">
+            <Setter Property="Background" Value="LightGray" />
+        </Style>
+
+        <Style Selector="ScrollBar:horizontal">
+
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True"
+                               Background="{TemplateBinding Background}">
+                        <Button x:Name="PART_LineUpButton">
+                            <avalonia:Icon Value="mdi chevron-left"
+                                           FontSize="24"
+                                           HorizontalAlignment="Right"
+                                           Margin="0,0,10,0" />
+                        </Button>
+                        <Button x:Name="PART_LineDownButton"
+                                DockPanel.Dock="Right">
+                            <avalonia:Icon Value="mdi chevron-right"
+                                           FontSize="24"
+                                           HorizontalAlignment="Left"
+                                           Margin="10,0,0,0" />
+                        </Button>
+                        <Track Orientation="Horizontal"
+                               DeferThumbDrag="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+                               Value="{TemplateBinding Value,
+                                             Mode=TwoWay}"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               ViewportSize="{TemplateBinding ViewportSize}">
+                            <Track.DecreaseButton>
+                                <RepeatButton Name="PART_PageUpButton" />
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Name="PART_PageDownButton" />
+                            </Track.IncreaseButton>
+                            <Thumb Name="thumb">
+                                <Thumb.Template>
+                                    <ControlTemplate>
+                                        <Border Background="DimGray"
+                                                Height="20">
+                                        </Border>
+                                    </ControlTemplate>
+                                </Thumb.Template>
+                            </Thumb>
+                        </Track>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="ScrollBar:vertical /template/ Button">
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          Padding="0" />
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Style Selector="^:pointerover">
+                <Setter Property="Background" Value="DimGray" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style Selector="^:pressed">
+                <Setter Property="RenderTransform" Value="{x:Null}" />
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="Foreground" Value="White" />
+            </Style>
+            <Style Selector="^:disabled">
+                <Setter Property="RenderTransform" Value="{x:Null}" />
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Foreground" Value="Gray" />
+            </Style>
+        </Style>
+        <Style Selector="ScrollBar:vertical[IsExpanded=False] /template/ Button">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="ScrollBar:vertical[IsExpanded=False]">
+            <Setter Property="Width" Value="10" />
+            <Setter Property="MinWidth" Value="10" />
+        </Style>
+        <Style Selector="ScrollBar:vertical /template/ RepeatButton">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="ScrollBar:vertical[IsExpanded=False]">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="ScrollBar:vertical[IsExpanded=True]">
+            <Setter Property="Background" Value="LightGray" />
+        </Style>
+
+        <Style Selector="ScrollBar:vertical">
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True"
+                               Background="{TemplateBinding Background}">
+                        <Button x:Name="PART_LineUpButton"
+                                DockPanel.Dock="Top">
+                            <avalonia:Icon Value="mdi chevron-up"
+                                           FontSize="24"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0,0,0,10" />
+                        </Button>
+                        <Button x:Name="PART_LineDownButton"
+                                DockPanel.Dock="Bottom">
+                            <avalonia:Icon Value="mdi chevron-down"
+                                           FontSize="24"
+                                           VerticalAlignment="Top"
+                                           Margin="0,10,0,0" />
+                        </Button>
+                        <Track Orientation="Vertical"
+                               DeferThumbDrag="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+                               Value="{TemplateBinding Value,
+                                             Mode=TwoWay}"
+                               RenderTransform="scaleY(-1)"
+                               Minimum="{TemplateBinding Minimum}"
+                               Maximum="{TemplateBinding Maximum}"
+                               ViewportSize="{TemplateBinding ViewportSize}">
+                            <Track.DecreaseButton>
+                                <RepeatButton Name="PART_PageUpButton" />
+                            </Track.DecreaseButton>
+                            <Track.IncreaseButton>
+                                <RepeatButton Name="PART_PageDownButton" />
+                            </Track.IncreaseButton>
+                            <Thumb Name="thumb">
+                                <Thumb.Template>
+                                    <ControlTemplate>
+                                        <Border Background="DimGray"
+                                                Width="20">
+                                        </Border>
+                                    </ControlTemplate>
+                                </Thumb.Template>
+                            </Thumb>
+                        </Track>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+
+        <Style Selector="Button:pressed">
+            <Setter Property="RenderTransform" Value="{x:Null}" />
+        </Style>
+
+        <Style Selector="ToggleButton:pressed">
+            <Setter Property="RenderTransform" Value="{x:Null}" />
+        </Style>
+    </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <c:StringCaseConverter x:Key="StringCaseConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceInclude Source="avares://Xenon.Controls/Themes/MetroControls.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

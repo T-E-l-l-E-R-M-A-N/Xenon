@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Xenon.Controls;assembly=Xenon.Controls"
+             xmlns:avalonia="https://github.com/projektanker/icons.avalonia"
+             xmlns:viewModels="clr-namespace:Xenon.Core.ViewModels;assembly=Xenon.Core"
+             xmlns:views="clr-namespace:Xenon.UI.Views"
+             mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="450"
+             x:Class="Xenon.UI.Views.MainView"
+             x:DataType="viewModels:MainViewModel"
+             FontWeight="Light">
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top">
+            <views:AppBar/>
+        </Border>
+        <TransitioningContentControl ClipToBounds="False" Content="{Binding CurrentPage}"/>
+    </DockPanel>
+</UserControl>

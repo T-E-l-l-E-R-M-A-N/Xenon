@@ -1,0 +1,83 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avalonia="https://github.com/projektanker/icons.avalonia"
+             xmlns:viewModels="clr-namespace:Xenon.Core.ViewModels;assembly=Xenon.Core"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="48"
+             x:DataType="viewModels:MainViewModel"
+             x:Class="Xenon.UI.Views.AppBar">
+    <UserControl.Styles>
+        <Style Selector="Button.AppBarButton">
+            <Setter Property="Height" Value="48"/>
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            
+            <Style Selector="^:pointerover /template/ ContentPresenter">
+                <Setter Property="Background" Value="DimGray"/>
+            </Style>
+            
+            <Style Selector="^:pressed /template/ ContentPresenter">
+                <Setter Property="Background" Value="Green"/>
+            </Style>
+            
+            <Style Selector="^:disabled /template/ ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Opacity" Value="0.5"/>
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+            
+            <Style Selector="^:disabled">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Opacity" Value="0.5"/>
+                <Setter Property="IsVisible" Value="False"/>
+            </Style>
+        </Style>
+        
+        <Style Selector="Button.AppBarButton avalonia|Icon">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style Selector="Button.AppBarButton:pointerover avalonia|Icon">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        
+        <Style Selector="Button.AppBarButton:pressed avalonia|Icon">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Button.AppBarButton.Menu">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Button.AppBarButton.Menu avalonia|Icon">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="White"/>
+
+        </Style>
+        
+        <Style Selector="TextBlock.AppBarTitle">
+            <Setter Property="FontSize" Value="38"/>
+            <Setter Property="Margin" Value="12,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Thin"/>
+        </Style>
+    </UserControl.Styles>
+    <DockPanel LastChildFill="True">
+        <Button Classes="AppBarButton Menu">
+            <avalonia:Icon Value="mdi menu"/>
+        </Button>
+        <Button Classes="AppBarButton"
+            DockPanel.Dock="Left"
+            HorizontalAlignment="Left"
+            Command="{Binding ReturnBackCommand}"
+            >
+            <avalonia:Icon Value="mdi arrow-left" />
+        </Button>
+        <Button DockPanel.Dock="Right" Classes="AppBarButton"
+                Command="{Binding OpenSearchCommand}">
+            <avalonia:Icon Value="mdi magnify" RenderTransform="scaleX(-1)"/>
+        </Button>
+        <Grid>
+        </Grid>
+    </DockPanel>
+</UserControl>
